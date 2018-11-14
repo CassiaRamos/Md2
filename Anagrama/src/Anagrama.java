@@ -17,15 +17,17 @@ public class Anagrama {
 	 * Este metodo imprime todos os anagramas encontrados. 
 	 */
 	static void imprime_Anagramas() {
-		System.out.print(" " + lista); 
+		System.out.println(" " + lista); 
 	}
 	
 	/**
-	 * Este metodo adiciona os anagramas em uma lista. 
+	 * Este metodo verifica se ja existe o anagrama e
+	 * adiciona os anagramas em uma lista. 
 	 */
 	private static void add_Lista(char[] vetor) {
 		String aux = new String(vetor);
-		lista.add(aux);
+		if (!lista.contains(aux))
+			lista.add(aux); 
 
 	}
 	
