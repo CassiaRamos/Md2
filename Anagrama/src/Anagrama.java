@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Anagrama {
 	
 	static ArrayList<String>lista = new ArrayList<String>(); 
+	static int juntas = 0, separadas;
 	
 	/**
 	 * Este metodo imprime o total de anagramas encontrados. 
@@ -14,6 +16,13 @@ public class Anagrama {
 	}
 	
 	/**
+	 * Este metodo imprime a quantidade de anagramas com letras juntas. 
+	 */
+	static void imprime_Juntas() {
+		System.out.println("\nQuantidade de anagramas com letras repetidas juntas: " + juntas + "\n");
+	}
+	
+	/**
 	 * Este metodo imprime todos os anagramas encontrados. 
 	 */
 	static void imprime_Anagramas() {
@@ -22,15 +31,32 @@ public class Anagrama {
 	
 	/**
 	 * Este metodo verifica se ja existe o anagrama e
-	 * adiciona os anagramas em uma lista. 
+	 * adiciona os anagramas em uma lista.
+	 * e chama metodos para procurar letras repetidas juntas e separadas. 
 	 */
 	private static void add_Lista(char[] vetor) {
 		String aux = new String(vetor);
-		if (!lista.contains(aux))
+		if (!lista.contains(aux)) {
+			letras_repetidas(aux);
 			lista.add(aux); 
+		}
 
 	}
 	
+	/**
+	 * Este metodo calcula a quantidade de anagramas
+	 * com letras juntas. 
+	 */
+	static void letras_repetidas(String p) {
+		int i, j;
+		for (j = 0; j < p.length(); j++) {
+			if (j < p.length() - 1)
+				if (p.charAt(j) == p.charAt(j+1)) {
+					juntas++;
+					break;
+				}
+		}
+	}
 	
 	/**
 	 * Este metodo recebe o vetor contendo a palavra e calcula 
@@ -39,7 +65,7 @@ public class Anagrama {
 	 */
 	static void calcula_Anagrama(char vetor[], int k) {
 		int i;
-		if (k == vetor.length - 1)
+		if (k == vetor.length - 1) 
 			add_Lista(vetor);
 		else {
 			calcula_Anagrama(vetor, k + 1);
