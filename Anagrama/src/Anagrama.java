@@ -33,6 +33,15 @@ public class Anagrama {
 		System.out.println(" " + lista); 
 	}
 	
+	static void imprime_Anagramas2() {
+		int cont = 0;
+		for(String s : lista) {
+			System.out.print(s + " ");
+			if( (cont+1)%10 == 0 ) System.out.println();
+			cont++;
+		}
+	}
+	
 	/**
 	 * Este metodo verifica se ja existe o anagrama e
 	 * adiciona os anagramas em uma lista.
