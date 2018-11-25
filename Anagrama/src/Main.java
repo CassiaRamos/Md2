@@ -32,7 +32,7 @@ public class Main {
             switch(opcao) {
                 case 1: Anagrama.mostra_Total(); break;
                 case 2: Anagrama.imprime_Juntas(); break;
-//                case 3: break;
+                case 3: Anagrama.imprimeSeparadas(); break;
                 case 4: Anagrama.imprime_Anagramas(); break; 
                 case 0: break;
                 default: System.out.println("Opção Invalida");

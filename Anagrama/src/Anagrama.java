@@ -22,6 +22,10 @@ public class Anagrama {
 		System.out.println("\nQuantidade de anagramas com letras repetidas juntas: " + juntas + "\n");
 	}
 	
+	public static void imprimeSeparadas() {
+		System.out.println("\nQuantidade de anagramas com letras separadas é: " + (lista.size() - juntas) + "\n");
+	}
+	
 	/**
 	 * Este metodo imprime todos os anagramas encontrados. 
 	 */
