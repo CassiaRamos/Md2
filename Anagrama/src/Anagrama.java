@@ -4,7 +4,7 @@ import java.util.Iterator;
 public class Anagrama {
 	
 	static ArrayList<String>lista = new ArrayList<String>(); 
-	static int juntas = 0, separadas;
+	static int juntas = 0;
 	
 	/**
 	 * Este metodo imprime o total de anagramas encontrados. 
@@ -23,7 +23,10 @@ public class Anagrama {
 	}
 	
 	public static void imprimeSeparadas() {
-		System.out.println("\nQuantidade de anagramas com letras separadas é: " + (lista.size() - juntas) + "\n");
+		if (juntas == 0)
+			System.out.println("\nQuantidade de anagramas com letras separadas é: 0");
+		else
+			System.out.println("\nQuantidade de anagramas com letras separadas é: " + (lista.size() - juntas) + "\n");
 	}
 	
 	/**
